@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Horoscope Widget - Zodiac</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fffaf0;
+      color: #333;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    select, button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+    }
+    #horoscope-result {
+      margin-top: 15px;
+      font-size: 14px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h2>🐲 Today's Zodiac Fortune</h2>
+  <label for="zodiac">Select your Zodiac Animal:</label>
+  <select id="zodiac" onchange="getZodiacFortune()">
+    <option value="rat">Rat (쥐)</option>
+    <option value="ox">Ox (소)</option>
+    <option value="tiger">Tiger (호랑이)</option>
+    <option value="rabbit">Rabbit (토끼)</option>
+    <option value="dragon">Dragon (용)</option>
+    <option value="snake">Snake (뱀)</option>
+    <option value="horse">Horse (말)</option>
+    <option value="goat">Goat (양)</option>
+    <option value="monkey">Monkey (원숭이)</option>
+    <option value="rooster">Rooster (닭)</option>
+    <option value="dog">Dog (개)</option>
+    <option value="pig">Pig (돼지)</option>
+  </select>
+  <button onclick="getZodiacFortune()">Get Fortune</button>
+
+  <div id="horoscope-result">Your zodiac fortune will appear here.</div>
+
+  <script>
+    function getZodiacFortune() {
+      const zodiac = document.getElementById("zodiac").value;
+      const fortunes = {
+        rat: "Today is a good day to organize your thoughts and set new goals.",
+        ox: "Hard work will bring you quiet rewards today.",
+        tiger: "Be bold—your confidence will inspire others.",
+        rabbit: "Take time to rest and reconnect with someone close.",
+        dragon: "Expect positive news regarding your personal projects.",
+        snake: "Trust your instincts in conversations today.",
+        horse: "You may feel energized—channel it into something creative!",
+        goat: "Cooperation is key. Team efforts will go smoothly.",
+        monkey: "Your humor will brighten someone’s day.",
+        rooster: "Pay attention to detail—it will save you time later.",
+        dog: "A friend might need your advice today. Be generous.",
+        pig: "Comfort and simplicity bring unexpected joy."
+      };
+      document.getElementById("horoscope-result").innerText = fortunes[zodiac];
+    }
+  </script>
+</body>
+</html>
